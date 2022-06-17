@@ -19,6 +19,9 @@ app.use(cors())
 const serverApp = http.createServer(app);
 //db connected
 connectDB()
+app.get('/',(req,res) =>{
+    res.send('unauthorized')
+})
 app.use('/users', userRoutes);
 app.use('/course', courseRoutes)
 app.use('/purchased', purchasedRoutes)
